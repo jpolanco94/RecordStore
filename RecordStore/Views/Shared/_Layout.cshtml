@@ -3,16 +3,16 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/bootstrap/dist/css/bootstrap.min.css"/>
     <title>Record Store</title>
 </head>
 <body>
     <div class="navbar navbar-inverse bg-inverse" role="navigation">
         <a class="navbar-brand" href="#">Record Store</a>
     </div>
-    <div class=" = "row m-1 p-1">
-        <div id="categories" class="col-3">
-            This record store sells only the greatest albums
+    <div class="row m-1 p-1">
+        <div id="genres" class="col-3">
+            @await  Component.InvokeAsync("NavigationMenu")
         </div>
         <div class="col-9">
             @RenderBody()

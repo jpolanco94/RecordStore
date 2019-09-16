@@ -10,5 +10,6 @@ namespace RecordStore.Models.ViewModels
     {
         public IEnumerable<Product> Products { get; set; }
         public PageInfo PageInfo { get; set; }
+        public string CurrentGenre { get; set; }
     }
 }
