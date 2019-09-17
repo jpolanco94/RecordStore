@@ -29,7 +29,7 @@ namespace RecordStore.Controllers
                     CurrentPage = productPage,
                     ItemsPerPage = PageSize,
                     TotalItems = genre == null?
-                        repository.Products.Count() :
+                        repository.Products.Count():
                         repository.Products.Where(e => e.Genre == genre).Count()
                 },
                 CurrentGenre = genre

@@ -15,7 +15,7 @@ namespace RecordStore.Tests
     public class NavigationMenuViewComponentTests
     {
         [Fact]
-        public void Can_Select_Categories()
+        public void Can_Select_Genres()
         {
             //Arrange
             Mock<IProductRepository> mock = new Mock<IProductRepository>();
@@ -28,7 +28,7 @@ namespace RecordStore.Tests
 
             NavigationMenuViewComponent target = new NavigationMenuViewComponent(mock.Object);
 
-            //Action - Get the set of categories
+            //Action - Get the set of genres
             string[] results = ((IEnumerable<string>)(target.Invoke()
                 as ViewViewComponentResult).ViewData.Model).ToArray();
 

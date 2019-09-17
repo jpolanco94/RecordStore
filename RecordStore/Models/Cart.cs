@@ -30,7 +30,7 @@ namespace RecordStore.Models
         }
 
         public virtual void RemoveLine(Product product) =>
-            lineCollection.RemoveAll(l => l.Product.ProductId == product.ProductId);
+            lineCollection.RemoveAll(w => w.Product.ProductId == product.ProductId);
 
         public virtual decimal ComputeTotalValue() => lineCollection
             .Sum(e => e.Product.Price * e.Quantity);
