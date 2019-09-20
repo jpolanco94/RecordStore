@@ -3,12 +3,18 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/font-awesome/css/all.css"/>
     <title>Record Store</title>
 </head>
 <body>
     <div class="navbar navbar-inverse bg-inverse" role="navigation">
-        <a class="navbar-brand" href="#">Record Store</a>
+        <div class="row">
+            <a class="col navbar-brand" href="#">Record Store</a>
+            <div class="fas fa-shopping-cart">
+                @await  Component.InvokeAsync("CartSummary")
+            </div>
+        </div>
     </div>
     <div class="row m-1 p-1">
         <div id="genres" class="col-3">
