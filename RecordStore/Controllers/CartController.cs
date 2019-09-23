@@ -15,10 +15,10 @@ namespace RecordStore.Controllers
         private IProductRepository repository;
         private Cart cart;
 
-        public CartController(IProductRepository repo, Cart cartServices)
+        public CartController(IProductRepository repo, Cart cartService)
         {
             repository = repo;
-            cart = cartServices;
+            cart = cartService;
         }
         public ViewResult Index(string returnUrl)
         {
