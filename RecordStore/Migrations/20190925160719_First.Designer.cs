@@ -10,8 +10,8 @@ using RecordStore.Models;
 namespace RecordStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190923153254_Initial")]
-    partial class Initial
+    [Migration("20190925160719_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -65,6 +65,8 @@ namespace RecordStore.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired();
+
+                    b.Property<bool>("Shipped");
 
                     b.Property<string>("State")
                         .IsRequired();
