@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RecordStore.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace RecordStore.Controllers
 {
@@ -16,6 +17,7 @@ namespace RecordStore.Controllers
             repository = repoService;
             cart = cartService;
         }
+        [Authorize]
         public ViewResult List() => View(repository.Orders.Where(o => !o.Shipped));
         [HttpPost]
         public IActionResult MarkShipped(int orderId)
@@ -31,6 +33,7 @@ namespace RecordStore.Controllers
         public ViewResult Checkout() => View(new Order());
 
         [HttpPost]
+        [Authorize]
         public IActionResult Checkout(Order order)
         {
             if (cart.Lines.Count() == 0)

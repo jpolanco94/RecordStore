@@ -10,8 +10,8 @@ using RecordStore.Models;
 namespace RecordStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190925160719_First")]
-    partial class First
+    [Migration("20191027220204_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,11 +84,14 @@ namespace RecordStore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Artist");
+                    b.Property<string>("Artist")
+                        .IsRequired();
 
-                    b.Property<string>("Genre");
+                    b.Property<string>("Genre")
+                        .IsRequired();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<decimal>("Price");
 
